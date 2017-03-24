@@ -6,8 +6,13 @@ angular.module('app.controllers', ['ionic'])
 function ($scope, $stateParams, $ionicPopup, $timeout) {
 		$scope.text = 'Measure physical activity';
 		var measuring = false;
+		$scope.he =  380;
+		// $scope.hei = 0;
 		$scope.showAlert = function() {
 		if(!measuring){
+			$scope.he = 265;
+			// $scope.hei = 200;
+			$scope.show1 = !$scope.show1;
 			this.text = 'Measuring...';
 			measuring = true;
 			var alertPopup = $ionicPopup.alert({
@@ -19,6 +24,9 @@ function ($scope, $stateParams, $ionicPopup, $timeout) {
      		});
 		}
 		else{
+			// $scope.hei = 0;
+			$scope.he = 380;
+			$scope.show1 = !$scope.show1;
 			this.text = 'Measure physical activity';
 			measuring = false;
 			var alertPopup = $ionicPopup.alert({
